@@ -1,3 +1,7 @@
+Makefile
+Makefile.Release
+Makefile.Debug
+
 #################
 ## Eclipse
 #################
