@@ -8,9 +8,11 @@ DEFINES += SFML_STATIC
 SOURCES += main.cpp \
     tiles/tiledlevel.cpp \
     aabb.cpp \
-    player.cpp
+    player.cpp \
+    object/objmanager.cpp
 
 HEADERS += \
     tiles/tiledlevel.h \
     aabb.h \
-    player.h
+    player.h \
+    object/objmanager.h
