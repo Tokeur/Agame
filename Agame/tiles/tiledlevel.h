@@ -6,9 +6,15 @@ public:
 	TiledLevel();
 	TiledLevel(unsigned long w, unsigned long h);
 	~TiledLevel();
-	unsigned char at(unsigned long x, unsigned long y);
+
+	const unsigned char at(unsigned long x, unsigned long y);
+	unsigned char& at(unsigned long x, unsigned long y);
+
 	unsigned long width();
 	unsigned long height();
+
+	void reset();
+	void reset(unsigned long w, unsigned long h);
 protected:
 	void init_();
 	void free_();

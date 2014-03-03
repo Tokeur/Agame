@@ -15,3 +15,51 @@ TiledLevel::TiledLevel(unsigned long w, unsigned long h) {
 TiledLevel::~TiledLevel() {
 	free_();
 }
+
+const unsigned char TiledLevel::at(unsigned long x, unsigned long y) {
+	if (_w!=0 && _h!=0)
+		if (x<_w && y<_h)
+			return _tiles[y*_w+x];
+	return 0;
+}
+
+unsigned char& TiledLevel::at(unsigned long x, unsigned long y) {
+	if (_w!=0 && _h!=0)
+		if (x<_w && y<_h)
+			return _tiles[y*_w+x];
+	return 0;
+}
+
+unsigned long TiledLevel::width() {
+	return _w;
+}
+
+unsigned long TiledLevel::height() {
+	return _h;
+}
+
+void TiledLevel::reset() {
+	if (_w!=0 && _h!=0) {
+		free_();
+		init_();
+	}
+}
+
+void TiledLevel::reset(unsigned long w, unsigned long h) {
+	_w=w;
+	_h=h;
+
+	reset();
+}
+
+void TiledLevel::init_() {
+	_tiles = new unsigned char[_w*_h];
+
+	for (unsigned long long i=0;i<_w*_h;i++)
+		_tiles[i]=0;
+}
+
+void TiledLevel::free_() {
+	delete[] _tiles;
+	_tiles=0;
+}
