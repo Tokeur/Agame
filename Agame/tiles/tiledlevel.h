@@ -1,11 +1,15 @@
 #ifndef TILEDLEVEL_H
 #define TILEDLEVEL_H
 
+#include <string>
+
 class TiledLevel {
 public:
 	TiledLevel();
 	TiledLevel(unsigned long w, unsigned long h);
 	~TiledLevel();
+
+	void loadFromImage(std::string fname);
 
 	const unsigned char at(unsigned long x, unsigned long y);
 	unsigned char& at(unsigned long x, unsigned long y);

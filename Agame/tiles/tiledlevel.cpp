@@ -1,4 +1,5 @@
 #include "tiledlevel.h"
+#include <SFML/Graphics.hpp>
 
 TiledLevel::TiledLevel() {
 	_w=_h=0;
@@ -14,6 +15,25 @@ TiledLevel::TiledLevel(unsigned long w, unsigned long h) {
 
 TiledLevel::~TiledLevel() {
 	free_();
+}
+
+void TiledLevel::loadFromImage(std::string fname) {
+	sf::Image img;
+
+	if (!img.loadFromFile(fname)) {
+		// TODO: handle error lol
+	}
+
+	_w=img.getSize().x;
+	_h=img.getSize().y;
+
+	reset();
+
+	for (unsigned long ix=0;ix<_w;ix++) {
+		for (unsigned long iy=0;iy<_h;iy++) {
+			at(ix, iy) = img.getPixel(ix, iy).r;
+		}
+	}
 }
 
 const unsigned char TiledLevel::at(unsigned long x, unsigned long y) {
