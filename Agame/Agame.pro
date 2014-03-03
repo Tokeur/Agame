@@ -9,10 +9,10 @@ SOURCES += main.cpp \
     tiles/tiledlevel.cpp \
     aabb.cpp \
     player.cpp \
-    object/objmanager.cpp
+    object/entitymanager.cpp
 
 HEADERS += \
     tiles/tiledlevel.h \
     aabb.h \
     player.h \
-    object/objmanager.h
+    object/entitymanager.h
