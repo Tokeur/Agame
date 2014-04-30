@@ -2,6 +2,7 @@ Makefile
 Makefile.Release
 Makefile.Debug
 *.autosave
+build-*
 
 #################
 ## Eclipse

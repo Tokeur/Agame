@@ -24,8 +24,8 @@ protected:
 	void init_();
 	void free_();
 
-	unsigned char rawAt(unsigned long long n) const;
-	unsigned char& rawAt(unsigned long long n);
+	unsigned char rawAt(unsigned long n) const;
+	unsigned char& rawAt(unsigned long n);
 private:
 	unsigned char* _tiles;
 	unsigned long _w, _h;

@@ -11,6 +11,7 @@ public:
 	EntityManager();
 
 	void append(Entity* o);
+	void destroy(Entity* o);
 
 	void updateAll();
 	void drawAll(sf::RenderWindow& window);

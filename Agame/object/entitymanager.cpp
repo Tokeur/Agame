@@ -4,8 +4,14 @@
 EntityManager::EntityManager() {
 }
 
-void EntityManager::append(Entity *o) {
+void EntityManager::append(Entity* o) {
 	_obj.push_front(o);
+	o->_manager = this;
+}
+
+void EntityManager::destroy(Entity* o) {
+	_obj.remove(o);
+	delete o;
 }
 
 void EntityManager::updateAll() {

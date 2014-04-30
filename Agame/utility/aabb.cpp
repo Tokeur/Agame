@@ -4,6 +4,13 @@ AABB::AABB() {
     x=y=w=h=0;
 }
 
+AABB::AABB(int xx, int yy, int ww, int hh) {
+	x=xx;
+	y=yy;
+	w=ww;
+	h=hh;
+}
+
 sf::Vector2f AABB::sfPos() const {
 	return sf::Vector2f((float)x, (float)y);
 }

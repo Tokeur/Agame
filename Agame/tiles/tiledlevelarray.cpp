@@ -102,10 +102,10 @@ void TiledLevelArray::free_() {
 	_tiles=0;
 }
 
-unsigned char TiledLevelArray::rawAt(unsigned long long n) const {
+unsigned char TiledLevelArray::rawAt(unsigned long n) const {
 	return _tiles[n];
 }
 
-unsigned char& TiledLevelArray::rawAt(unsigned long long n) {
+unsigned char& TiledLevelArray::rawAt(unsigned long n) {
 	return _tiles[n];
 }

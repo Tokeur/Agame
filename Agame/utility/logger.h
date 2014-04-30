@@ -27,7 +27,6 @@ public: // static
 		logger._push(std::forward<Args>(args)...);
 		logger._log();
 	}
-
 private:
 	template<class Type, class... Args>
 	void _push(Type&& o, Args&&... args) {
