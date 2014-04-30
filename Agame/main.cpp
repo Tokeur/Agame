@@ -1,8 +1,13 @@
 #include <SFML/Graphics.hpp>
+#include "common/gameoptions.h"
 
 int main(int, char**) {
 	sf::RenderWindow window(sf::VideoMode(640, 480), "Game v(@Version)");
+
+	sf::Clock tickingclock;
 	bool winFocused=true;
+
+	window.clear();
 
 	while(window.isOpen()) {
 		sf::Event ev;
@@ -17,10 +22,29 @@ int main(int, char**) {
 			else if (ev.type==sf::Event::GainedFocus)
 				winFocused=true;
 //			else
-//				scene.onEvent(ev);
+//				scene->onEvent(ev);
 		}
 
-		window.clear();
+		if (winFocused || GameOptions::ignoreFocus) {
+			window.clear();
+
+			sf::Time time = tickingclock.getElapsedTime();
+			tickingclock.restart();
+
+//			scene->update(time);
+//			scene->draw(window);
+
+//			SceneBase* nscene = scene->getNextScene();
+
+/*			if (nscene!=scene) {
+				delete scene;
+				if (nscene==0)
+					window.close();
+				else
+					scene = nscene;
+			} //*/
+		}
+
 		window.display();
 	}
 

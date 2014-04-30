@@ -11,7 +11,9 @@ SOURCES += main.cpp \
     object/entity.cpp \
     object/playerentity.cpp \
     utility/logger.cpp \
-    utility/aabb.cpp
+    utility/aabb.cpp \
+    scene/scenebase.cpp \
+    common/gameoptions.cpp
 
 HEADERS += \
     tiles/tiledlevel.h \
@@ -19,4 +21,6 @@ HEADERS += \
     object/entity.h \
     object/playerentity.h \
     utility/logger.h \
-    utility/aabb.h
+    utility/aabb.h \
+    scene/scenebase.h \
+    common/gameoptions.h
