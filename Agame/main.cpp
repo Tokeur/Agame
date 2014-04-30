@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int main()
+int main(int, char**)
 {
     sf::RenderWindow window(sf::VideoMode(640,480), "AGame");
 

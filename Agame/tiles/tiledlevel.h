@@ -13,7 +13,7 @@ public:
 
 	void loadFromImage(std::string fname);
 
-	const unsigned char at(unsigned long x, unsigned long y);
+	unsigned char at(unsigned long x, unsigned long y) const;
 	unsigned char& at(unsigned long x, unsigned long y);
 
 	unsigned long width();

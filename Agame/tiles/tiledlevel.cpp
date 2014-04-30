@@ -36,14 +36,14 @@ void TiledLevel::loadFromImage(std::string fname) {
 	}
 }
 
-const unsigned char TiledLevel::at(unsigned long x, unsigned long y) {
+unsigned char& TiledLevel::at(unsigned long x, unsigned long y) {
 	if (_w!=0 && _h!=0)
 		if (x<_w && y<_h)
 			return _tiles[y*_w+x];
-	return 0;
+	return _tiles[-1];
 }
 
-unsigned char& TiledLevel::at(unsigned long x, unsigned long y) {
+unsigned char TiledLevel::at(unsigned long x, unsigned long y) const {
 	if (_w!=0 && _h!=0)
 		if (x<_w && y<_h)
 			return _tiles[y*_w+x];
