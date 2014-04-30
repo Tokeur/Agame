@@ -7,16 +7,16 @@ DEFINES += SFML_STATIC
 
 SOURCES += main.cpp \
     tiles/tiledlevel.cpp \
-    aabb.cpp \
     object/entitymanager.cpp \
     object/entity.cpp \
     object/playerentity.cpp \
-    utility/logger.cpp
+    utility/logger.cpp \
+    utility/aabb.cpp
 
 HEADERS += \
     tiles/tiledlevel.h \
-    aabb.h \
     object/entitymanager.h \
     object/entity.h \
     object/playerentity.h \
-    utility/logger.h
+    utility/logger.h \
+    utility/aabb.h
