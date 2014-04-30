@@ -14,6 +14,6 @@ void Entity::destroy() {
 	_manager->destroy(this);
 }
 
-Entity::EntityType Entity::entityType() {
+Entity::EntityType Entity::entityType() const {
 	return _type;
 }

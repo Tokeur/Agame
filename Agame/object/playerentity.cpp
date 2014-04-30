@@ -1,5 +1,5 @@
 #include "playerentity.h"
 
-PlayerEntity::PlayerEntity()
+PlayerEntity::PlayerEntity() : Entity(TYPE_PLAYER)
 {
 }
