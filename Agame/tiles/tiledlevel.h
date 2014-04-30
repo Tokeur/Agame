@@ -3,8 +3,6 @@
 
 #include <string>
 
-/* TiledLevel by Stan "DeinDall" 2014 */
-
 class TiledLevel {
 public:
 	TiledLevel();
