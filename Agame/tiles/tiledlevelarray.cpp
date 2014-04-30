@@ -50,7 +50,7 @@ void TiledLevelArray::saveToImage(std::string fname) const {
 	}
 
 	if (!img.saveToFile(fname)) {
-		Logger::log("ERROR when loading TiledLevelArray from image file ", fname);
+		Logger::log("ERROR when saving TiledLevelArray to image file ", fname);
 	}
 }
 
