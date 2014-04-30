@@ -4,7 +4,7 @@
 #include <SFML/Graphics.hpp>
 
 #include "entity.h"
-#include "aabb.h"
+#include "utility/aabb.h"
 
 class PlayerEntity : public Entity {
 public:

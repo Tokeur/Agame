@@ -19,7 +19,7 @@ public: // static
 	 *
 	 * it writes into srd::cout and std::clog
 	 *
-	 * \param all items to print into the message, as individual arguments (so separated by commas)
+	 * \param all items to print into the message, as individual arguments (which means separated by commas)
 	 */
 	template<class... Args>
 	static void log(Args&&... args) {
