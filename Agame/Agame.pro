@@ -14,7 +14,8 @@ SOURCES += main.cpp \
     scene/scenebase.cpp \
     common/gameoptions.cpp \
     tiles/tiledlevelarray.cpp \
-    scene/scenegame.cpp
+    scene/scenegame.cpp \
+    tiles/tiledlevel.cpp
 
 HEADERS += \
     object/entitymanager.h \
@@ -25,4 +26,5 @@ HEADERS += \
     scene/scenebase.h \
     common/gameoptions.h \
     tiles/tiledlevelarray.h \
-    scene/scenegame.h
+    scene/scenegame.h \
+    tiles/tiledlevel.h
