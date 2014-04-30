@@ -4,25 +4,23 @@
 using namespace std;
 
 int main(int, char**) {
-	sf::RenderWindow window(sf::VideoMode(640,480), "AGame");
+	sf::RenderWindow window(sf::VideoMode(640, 480), "Game v(@Version)");
+	bool winFocused=true;
 
 	while(window.isOpen()) {
 		sf::Event ev;
 
 		while(window.pollEvent(ev)) {
-			switch (ev.type) {
-			case sf::Event::KeyPressed:
-				switch (ev.key.code) {
-				case sf::Keyboard::Escape:
-					window.close();
-				break;
-				}
-			break;
-
-			case sf::Event::Closed:
+			if (ev.type==sf::Event::Closed)
 				window.close();
-			break;
-			}
+			else if (ev.type==sf::Event::KeyReleased && ev.key.code==sf::Keyboard::Escape)
+				window.close();
+			else if (ev.type==sf::Event::LostFocus)
+				winFocused=false;
+			else if (ev.type==sf::Event::GainedFocus)
+				winFocused=true;
+//			else
+//				scene.onEvent(ev);
 		}
 
 		window.clear();
