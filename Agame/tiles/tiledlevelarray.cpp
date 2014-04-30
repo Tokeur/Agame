@@ -1,29 +1,29 @@
-#include "tiledlevel.h"
+#include "tiledlevelarray.h"
 #include "utility/logger.h"
 
 #include <SFML/Graphics.hpp>
 
-TiledLevel::TiledLevel() {
+TiledLevelArray::TiledLevelArray() {
 	_w=_h=0;
 	_tiles=0;
 }
 
-TiledLevel::TiledLevel(unsigned long w, unsigned long h) {
+TiledLevelArray::TiledLevelArray(unsigned long w, unsigned long h) {
 	_w=w;
 	_h=h;
 
 	init_();
 }
 
-TiledLevel::~TiledLevel() {
+TiledLevelArray::~TiledLevelArray() {
 	free_();
 }
 
-void TiledLevel::loadFromImage(std::string fname) {
+void TiledLevelArray::loadFromImage(std::string fname) {
 	sf::Image img;
 
 	if (!img.loadFromFile(fname)) {
-		Logger::log("ERROR when loading TiledLevel from image file ", fname);
+		Logger::log("ERROR when loading TiledLevelArray from image file ", fname);
 	}
 
 	_w=img.getSize().x;
@@ -38,7 +38,7 @@ void TiledLevel::loadFromImage(std::string fname) {
 	}
 }
 
-void TiledLevel::saveToImage(std::string fname) const {
+void TiledLevelArray::saveToImage(std::string fname) const {
 	sf::Image img;
 
 	img.create(_w, _h);
@@ -50,62 +50,62 @@ void TiledLevel::saveToImage(std::string fname) const {
 	}
 
 	if (!img.saveToFile(fname)) {
-		Logger::log("ERROR when loading TiledLevel from image file ", fname);
+		Logger::log("ERROR when loading TiledLevelArray from image file ", fname);
 	}
 }
 
-unsigned char& TiledLevel::at(unsigned long x, unsigned long y) {
+unsigned char& TiledLevelArray::at(unsigned long x, unsigned long y) {
 	if (_w!=0 && _h!=0)
 		if (x<_w && y<_h)
 			return _tiles[y*_w+x];
 	return _tiles[-1];
 }
 
-unsigned char TiledLevel::at(unsigned long x, unsigned long y) const {
+unsigned char TiledLevelArray::at(unsigned long x, unsigned long y) const {
 	if (_w!=0 && _h!=0)
 		if (x<_w && y<_h)
 			return _tiles[y*_w+x];
 	return 0;
 }
 
-unsigned long TiledLevel::width() const {
+unsigned long TiledLevelArray::width() const {
 	return _w;
 }
 
-unsigned long TiledLevel::height() const {
+unsigned long TiledLevelArray::height() const {
 	return _h;
 }
 
-void TiledLevel::reset() {
+void TiledLevelArray::reset() {
 	if (_w!=0 && _h!=0) {
 		free_();
 		init_();
 	}
 }
 
-void TiledLevel::reset(unsigned long w, unsigned long h) {
+void TiledLevelArray::reset(unsigned long w, unsigned long h) {
 	_w=w;
 	_h=h;
 
 	reset();
 }
 
-void TiledLevel::init_() {
+void TiledLevelArray::init_() {
 	_tiles = new unsigned char[_w*_h];
 
 	for (unsigned long long i=0;i<_w*_h;i++)
 		_tiles[i]=0;
 }
 
-void TiledLevel::free_() {
+void TiledLevelArray::free_() {
 	delete[] _tiles;
 	_tiles=0;
 }
 
-unsigned char TiledLevel::rawAt(unsigned long long n) const {
+unsigned char TiledLevelArray::rawAt(unsigned long long n) const {
 	return _tiles[n];
 }
 
-unsigned char& TiledLevel::rawAt(unsigned long long n) {
+unsigned char& TiledLevelArray::rawAt(unsigned long long n) {
 	return _tiles[n];
 }

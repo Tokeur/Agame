@@ -1,13 +1,13 @@
-#ifndef TILEDLEVEL_H
-#define TILEDLEVEL_H
+#ifndef TILEDLEVELARRAY_H
+#define TILEDLEVELARRAY_H
 
 #include <string>
 
-class TiledLevel {
+class TiledLevelArray {
 public:
-	TiledLevel();
-	TiledLevel(unsigned long w, unsigned long h);
-	~TiledLevel();
+	TiledLevelArray();
+	TiledLevelArray(unsigned long w, unsigned long h);
+	~TiledLevelArray();
 
 	void loadFromImage(std::string fname);
 	void saveToImage(std::string fname) const;
@@ -31,4 +31,4 @@ private:
 	unsigned long _w, _h;
 };
 
-#endif // TILEDLEVEL_H
+#endif // TILEDLEVELARRAY_H
