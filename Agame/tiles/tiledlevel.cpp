@@ -44,7 +44,7 @@ void TiledLevel::draw(sf::RenderTarget& target, sf::RenderStates states) const {
 	target.draw(_vertexArray, states);
 }
 
-void TiledLevel::updateGraphics() {
+void TiledLevel::updateGraphics() const {
 	_vertexArray.clear();
 	_vertexArray.resize(width()*height()*6);
 

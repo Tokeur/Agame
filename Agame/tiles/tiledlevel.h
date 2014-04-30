@@ -18,9 +18,9 @@ public:
 
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 protected:
-	void updateGraphics();
+	void updateGraphics() const;
 private:
-	sf::VertexArray _vertexArray;
+	mutable sf::VertexArray _vertexArray;
 	sf::Texture* _tilesetTexture;
 
 	bool _graphicsNeedsUpdate;
