@@ -10,6 +10,7 @@ public:
 	~TiledLevel();
 
 	void loadFromImage(std::string fname);
+	void saveToImage(std::string fname) const;
 
 	unsigned char at(unsigned long x, unsigned long y) const;
 	unsigned char& at(unsigned long x, unsigned long y);

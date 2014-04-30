@@ -36,6 +36,20 @@ void TiledLevel::loadFromImage(std::string fname) {
 	}
 }
 
+void TiledLevel::saveToImage(std::string fname) const {
+	sf::Image img;
+
+	img.create(_w, _h);
+
+	for (unsigned long ix=0;ix<_w;ix++) {
+		for (unsigned long iy=0;iy<_h;iy++) {
+			img.setPixel(ix, iy, sf::Color(at(ix, iy), 128, 128));
+		}
+	}
+
+	img.saveToFile(fname);
+}
+
 unsigned char& TiledLevel::at(unsigned long x, unsigned long y) {
 	if (_w!=0 && _h!=0)
 		if (x<_w && y<_h)
