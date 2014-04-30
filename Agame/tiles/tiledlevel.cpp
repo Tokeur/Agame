@@ -50,11 +50,11 @@ unsigned char TiledLevel::at(unsigned long x, unsigned long y) const {
 	return 0;
 }
 
-unsigned long TiledLevel::width() {
+unsigned long TiledLevel::width() const {
 	return _w;
 }
 
-unsigned long TiledLevel::height() {
+unsigned long TiledLevel::height() const {
 	return _h;
 }
 
@@ -82,4 +82,12 @@ void TiledLevel::init_() {
 void TiledLevel::free_() {
 	delete[] _tiles;
 	_tiles=0;
+}
+
+unsigned char TiledLevel::rawAt(unsigned long long n) const {
+	return _tiles[n];
+}
+
+unsigned char& TiledLevel::rawAt(unsigned long long n) {
+	return _tiles[n];
 }

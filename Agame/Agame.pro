@@ -8,13 +8,13 @@ DEFINES += SFML_STATIC
 SOURCES += main.cpp \
     tiles/tiledlevel.cpp \
     aabb.cpp \
-    player.cpp \
     object/entitymanager.cpp \
-    object/entity.cpp
+    object/entity.cpp \
+    object/playerentity.cpp
 
 HEADERS += \
     tiles/tiledlevel.h \
     aabb.h \
-    player.h \
     object/entitymanager.h \
-    object/entity.h
+    object/entity.h \
+    object/playerentity.h

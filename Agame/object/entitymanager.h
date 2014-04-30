@@ -1,5 +1,5 @@
-#ifndef OBJMANAGER_H
-#define OBJMANAGER_H
+#ifndef ENTITYMANAGER_H
+#define ENTITYMANAGER_H
 
 #include <forward_list>
 #include <SFML/Graphics.hpp>
@@ -18,4 +18,4 @@ private:
 	std::forward_list<Entity*> _obj;
 };
 
-#endif // OBJMANAGER_H
+#endif // ENTITYMANAGER_H

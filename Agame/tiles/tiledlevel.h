@@ -16,14 +16,17 @@ public:
 	unsigned char at(unsigned long x, unsigned long y) const;
 	unsigned char& at(unsigned long x, unsigned long y);
 
-	unsigned long width();
-	unsigned long height();
+	unsigned long width() const;
+	unsigned long height() const;
 
 	void reset();
 	void reset(unsigned long w, unsigned long h);
 protected:
 	void init_();
 	void free_();
+
+	unsigned char rawAt(unsigned long long n) const;
+	unsigned char& rawAt(unsigned long long n);
 private:
 	unsigned char* _tiles;
 	unsigned long _w, _h;
