@@ -1,7 +1,4 @@
-#include <iostream>
 #include <SFML/Graphics.hpp>
-
-using namespace std;
 
 int main(int, char**) {
 	sf::RenderWindow window(sf::VideoMode(640, 480), "Game v(@Version)");
