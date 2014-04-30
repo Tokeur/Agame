@@ -1,4 +1,6 @@
 #include "tiledlevel.h"
+#include "utility/logger.h"
+
 #include <SFML/Graphics.hpp>
 
 TiledLevel::TiledLevel() {
@@ -21,7 +23,7 @@ void TiledLevel::loadFromImage(std::string fname) {
 	sf::Image img;
 
 	if (!img.loadFromFile(fname)) {
-		// TODO: handle error lol
+		Logger::log("ERROR when loading TiledLevel from image file ", fname);
 	}
 
 	_w=img.getSize().x;
@@ -47,7 +49,9 @@ void TiledLevel::saveToImage(std::string fname) const {
 		}
 	}
 
-	img.saveToFile(fname);
+	if (!img.saveToFile(fname)) {
+		Logger::log("ERROR when loading TiledLevel from image file ", fname);
+	}
 }
 
 unsigned char& TiledLevel::at(unsigned long x, unsigned long y) {
