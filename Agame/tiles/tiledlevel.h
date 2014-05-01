@@ -4,7 +4,7 @@
 #include "tiledlevelarray.h"
 #include <SFML/Graphics.hpp>
 
-class TiledLevel : public TiledLevelArray, sf::Drawable, sf::Transformable {
+class TiledLevel : public TiledLevelArray, public sf::Drawable, public sf::Transformable {
 public:
 	TiledLevel();
 	~TiledLevel();

@@ -3,6 +3,7 @@ Makefile.Release
 Makefile.Debug
 *.autosave
 build-*
+object_script.*
 
 #################
 ## Eclipse
